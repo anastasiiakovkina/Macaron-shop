@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" id="input" placeholder="Введите продукт.">
+<ul id="list">
+    <li>масло</li>
+    <li>сметана</li>
+    <li>творог</li>
+    <li>кефир</li>
+    <li>молоко</li>
+    <li>сыр</li>
+    <li>ряженка</li>
+    <li>брынза</li>
+</ul>
+<script>
+    let filter = function () {
+    let input = document.getElementById('input');
+    input.addEventListener('keyup', function () {
+    let filter = input.value.toLowerCase(),
+    filterItems = document.querySelectorAll('#list li');
+    filterItems.forEach(item => {
+        if (item.innerHTML.toLowerCase().indexOf(filter) > -1) {
+     item.style.display = '';
+} else {
+    item.style.display = 'none';
+}
+        })
+    })
+};
+filter();
+
+</script>
+</body>
+</html>
